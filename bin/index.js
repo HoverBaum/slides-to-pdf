@@ -7,7 +7,7 @@ const packageInfo = require('../package.json')
 program
   .version(packageInfo.version)
   .usage('[options] <baseUrl>')
-  .option('-s, --start-index <index>', 'Start index for slides, otherwise stars at \'/\' and next counts to 1.')
+  .option('-f, --first-index <index>', 'First index for slides, otherwise stars at \'/\' and next counts to 1.')
   .option('-o, --output <filename>', 'Filename for output PDF defaults to using page title.')
   .parse(process.argv)
 
@@ -19,11 +19,11 @@ if (!baseUrl) {
 }
 
 // Construct options
-const startIndex = program.startIndex || ''
+const initialPath = program.firstIndex || ''
 const outputFileName = program.output
 
 const options = {
-  firstSlideNumber: startIndex
+  initialPath
 }
 if (outputFileName) options.outputFileName = outputFileName
 

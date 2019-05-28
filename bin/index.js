@@ -8,7 +8,7 @@ program
   .version(packageInfo.version)
   .usage('[options] <baseUrl>')
   .option('-f, --first-index <index>', 'First index for slides, otherwise stars at \'/\' and next counts to 1.')
-  .option('-o, --output <filename>', 'Filename for output PDF defaults to using page title.')
+  .option('-o, --output <filename>', 'Filename for output PDF, defaults to using page title.')
   .parse(process.argv)
 
 // Ensure baseUrl was provided
